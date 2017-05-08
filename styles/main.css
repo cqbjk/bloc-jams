@@ -1,0 +1,55 @@
+html {
+    height: 100%; /* makes sure our HTML takes up 100% of the browser window */
+    font-size: 100%;
+}
+
+body {
+    font-family: 'Open Sans'; /* sets our font to the "Open Sans" typeface */
+    color: white;             /* sets the text color to white */
+    min-height: 100%;         /* says the height of the body must be, at minimum, 100% of the window */
+}
+
+.navbar {
+    padding: 0.5rem;
+    background-color: rgb(101,18,95);
+}
+
+.navbar .logo {
+    position: relative; /* positioning will be explained in a resource */
+    left: 2rem;
+}
+
+
+ *, *::before, *::after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 64rem;
+}
+
+/* Medium and small screens (640px) */
+@media (min-width: 640px) {
+  html { font-size: 112%; }
+
+  .column {
+          float: left;
+          padding-left: 1rem;
+          padding-right: 1rem;
+      }
+
+      .column.full { width: 100%; }
+     .column.two-thirds { width: 66.7%; }
+     .column.half { width: 50%; }
+     .column.third { width: 33.3%; }
+     .column.fourth { width: 25%; }
+     .column.flow-opposite { float: right; }
+}
+
+/* Large screens (1024px) */
+@media (min-width: 1024px) {
+  html { font-size: 120%; }
+}
