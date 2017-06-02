@@ -12,7 +12,7 @@ var collectionItemTemplate =
    + '    </p>'
    + '  </div>'
    + '</div>'
-   ;
+;
 
 
    window.onload = function() {
