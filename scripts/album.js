@@ -91,6 +91,12 @@ var albumMarconi = {
 
          });
 };
+ 
+var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
+var songRows = document.getElementsByClassName('album-view-song-item');
+
+
+var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
@@ -112,8 +118,7 @@ window.onload = function() {
                // Revert the content back to the number
            });
        }
-
-
+    
     var albums = [albumPicasso, albumMarconi, albumCher];
     var index = 1;
     albumImage.addEventListener("click", function(event) {
