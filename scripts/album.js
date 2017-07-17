@@ -100,6 +100,8 @@ var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></
 
 var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
+// Store state of playing songs
+var currentlyPlayingSong = null;
 
 var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
 var songRows = document.getElementsByClassName('album-view-song-item');
@@ -117,9 +119,15 @@ window.onload = function() {
            songRows[i].addEventListener('mouseleave', function(event) {
                // Revert the content back to the number
            });
+
+           songRows[i].addEventListener('click', function(event) {
+                       // Event handler call
+                   });
+
        }
     
     var albums = [albumPicasso, albumMarconi, albumCher];
+
     var index = 1;
     albumImage.addEventListener("click", function(event) {
       setCurrentAlbum(albums[index]);
