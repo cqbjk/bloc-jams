@@ -50,7 +50,7 @@ var albumMarconi = {
  var createSongRow = function(songNumber, songName, songLength) {
       var template =
          '<tr class="album-view-song-item">'
-       + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
+       +       + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>
        + '  <td class="song-item-title">' + songName + '</td>'
        + '  <td class="song-item-duration">' + songLength + '</td>'
        + '</tr>'
@@ -115,6 +115,24 @@ var getSongItem = function(element) {
     }
 };
 
+var getSongItem = function(element) {
+    switch (element.className) {
+        case 'album-song-button':
+        case 'ion-play':
+        case 'ion-pause':
+            return findParentByClassName(element, 'song-item-number');
+        case 'album-view-song-item':
+            return element.querySelector('.song-item-number');
+        case 'song-item-title':
+        case 'song-item-duration':
+            return findParentByClassName(element, 'album-view-song-item').querySelector('.song-item-number');
+        case 'song-item-number':
+            return element;
+        default:
+            return;
+    }
+};
+
 var clickHandler = function(targetElement) {
 };
 
@@ -140,11 +158,13 @@ var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
 
 var currentlyPlayingSong = null;
+
 // Store state of playing songs
 var currentlyPlayingSong = null;
 
 var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
 var songRows = document.getElementsByClassName('album-view-song-item');
+
 
 
 window.onload = function() {
