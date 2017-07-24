@@ -50,7 +50,7 @@ var albumMarconi = {
  var createSongRow = function(songNumber, songName, songLength) {
       var template =
          '<tr class="album-view-song-item">'
-       + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
+       +       + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>
        + '  <td class="song-item-title">' + songName + '</td>'
        + '  <td class="song-item-duration">' + songLength + '</td>'
        + '</tr>'
@@ -130,6 +130,7 @@ var findParentByClassName = function(element, targetClass) {
         }
     } else {
         alert("No parent found.");
+
     }
 };
 
@@ -158,11 +159,13 @@ var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></
 var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
 
 var currentlyPlayingSong = null;
+
 // Store state of playing songs
 var currentlyPlayingSong = null;
 
 var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
 var songRows = document.getElementsByClassName('album-view-song-item');
+
 
 
 window.onload = function() {
